@@ -120,4 +120,4 @@
 
  5.5: 投稿ページを磨き上げる。Headタグの追加。(option)日付フォーマット修正。npm i date-fns。components/data.jsにDateコンポーネント作成。articlesタグを[id].jsに追記。
 
- 5.6: インデックスページを磨き上げる。
+ 5.6: インデックスページを磨き上げる。index.jsのトップページでLINKタグを貼る。

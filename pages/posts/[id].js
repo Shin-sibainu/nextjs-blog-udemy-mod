@@ -9,7 +9,7 @@ import Date from "../../components/date";
 
 import utilStyles from "../../styles/utils.module.css";
 
-//動的ルーティング設定のための関数。pathsがルーティング設定になっている。
+//動的ルーティング設定のための関数。pathsがルーティング設定になっている(開発環境なら毎回リクエスト時に実行される、本番環境ならビルド時だけ実行される。)。
 //idがとりうる値のリストを返す
 export async function getStaticPaths() {
   //ブログ投稿データのファイル名(id)を取得。
