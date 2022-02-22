@@ -39,6 +39,20 @@ export default function Home({ allPostsData }) {
         </p>
         <Link href="/posts/first-post">最初の投稿はこちら</Link>
       </section>
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <h2 className={utilStyles.headingLg}>ブログ</h2>
+        <ul className={utilStyles.list}>
+          {allPostsData.map(({ id, date, title }) => (
+            <li className={utilStyles.listItem} key={id}>
+              {title}
+              <br />
+              {id}
+              <br />
+              {date}
+            </li>
+          ))}
+        </ul>
+      </section>
     </Layout>
     // <div className={styles.container}>
     //   <Head>
