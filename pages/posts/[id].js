@@ -4,6 +4,11 @@
 import Layout from "../../components/layout";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 
+import Head from "next/head";
+import Date from "../../components/date";
+
+import utilStyles from "../../styles/utils.module.css";
+
 //動的ルーティング設定のための関数。pathsがルーティング設定になっている。
 //idがとりうる値のリストを返す
 export async function getStaticPaths() {
@@ -18,8 +23,9 @@ export async function getStaticPaths() {
 
 //SSG(id(ファイル名)に基づいて必要なデータを取得)
 export async function getStaticProps({ params }) {
-  const postData = getPostData(params.id);
+  const postData = await getPostData(params.id); //あとでasyncとawaitをつける。
 
+  console.log(postData);
   return {
     props: {
       postData,
@@ -30,12 +36,27 @@ export async function getStaticProps({ params }) {
 export default function Post({ postData }) {
   return (
     <Layout>
+      <Head>
+        <title>{postData.title}</title>
+      </Head>
       {/* ... */}
-      {postData.title}
+
+      {/* {postData.title}
       <br />
       {postData.id}
+      <br /> */}
+      {/* {postData.date} */}
+      {/* <Date dateString={postData.date} />
       <br />
-      {postData.date}
+      <div dangerouslySetInnerHTML={{ __html: postData.contentHTML }} /> */}
+
+      <article>
+        <h1 className={utilStyles.headingXl}>{postData.title}</h1>
+        <div className={utilStyles.lightText}>
+          <Date dateString={postData.date} />
+        </div>
+        <div dangerouslySetInnerHTML={{ __html: postData.contentHTML }} />
+      </article>
     </Layout>
   );
 }

@@ -116,4 +116,8 @@
 
  5.3: getStaticPropsを実装する.id(ファイル名)に基づいてブログデータを取得するためにlib/posts.jsに関数を追記。さらにpages/posts/[id].jsにSSGを実装する。
 
- 5.4: マークダウンをレンダーする。npm i remark remark-html。
+ 5.4: マークダウンをレンダーする。npm i remark remark-html。getPostDataに追記する。そしてHTMLに表示。
+
+ 5.5: 投稿ページを磨き上げる。Headタグの追加。(option)日付フォーマット修正。npm i date-fns。components/data.jsにDateコンポーネント作成。articlesタグを[id].jsに追記。
+
+ 5.6: インデックスページを磨き上げる。
