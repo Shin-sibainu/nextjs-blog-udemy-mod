@@ -48,7 +48,7 @@ export default function Home({ allPostsData }) {
         <div className={`${styles.grid}`}>
           {/* 1つ１つのブログをdivで生成してgrid適用させる */}
           {allPostsData.map(({ id, date, title, thumbnail }) => (
-            <article ket={id}>
+            <article key={id}>
               <Link href={`/posts/${id}`}>
                 <img
                   src={`${thumbnail}`}
