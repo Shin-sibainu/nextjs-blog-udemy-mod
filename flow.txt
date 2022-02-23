@@ -121,3 +121,16 @@
  5.5: 投稿ページを磨き上げる。Headタグの追加。(option)日付フォーマット修正。npm i date-fns。components/data.jsにDateコンポーネント作成。articlesタグを[id].jsに追記。
 
  5.6: インデックスページを磨き上げる。index.jsのトップページでLINKタグを貼る。
+
+ 5.7: フォールバックについて。trueは巨大なECサイトとかに使われるらしい。blockingは知りません。
+
+ 5.8: 404ページの作成。pages/404.jsを作成。ビルド時に静的に生成される。
+
+6. APIルート
+➡APIエンドポイントをNode.js関数として簡単に作成可能。　
+ 6.1: pages/apiの中にNode.js関数を定義する.
+ /api/helloにアクセスして確認する。
+ 6.2: フォーム入力の処理のときにAPIルートを使うと良い。
+
+7. デプロイ
+➡Next.jsはVercel社が作ったからかなりデプロイしやすい。ＤＰＳワークフロー(Develop, Preview, Ship)

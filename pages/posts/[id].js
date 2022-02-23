@@ -16,8 +16,8 @@ export async function getStaticPaths() {
   const paths = getAllPostIds();
 
   return {
-    paths,
-    fallback: false, //あとで説明。
+    paths, //どのパスが事前にレンダリングされるのか決める。
+    fallback: false, //あとで説明。(falseにすると、上のpathsに含まれてないあらゆるパスはアクセスすると404ページになる。)
   };
 }
 
