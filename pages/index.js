@@ -38,13 +38,21 @@ export default function Home({ allPostsData }) {
         <p>
           私はフルスタックエンジニアです。Udemy講師として活動しています。好きな言語はJavascriptです。
         </p>
-        <Link href="/posts/first-post">最初の投稿はこちら</Link>
+        {/* <Link href="/posts/first-post">最初の投稿はこちら</Link>  あとで外す*/}
       </section>
+
+      {/* gridで表示したい */}
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>ブログ</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
+        <h2 className={utilStyles.headingLg}>📝エンジニアのブログ</h2>
+
+        <div className={`${styles.grid}`}>
+          {/* 1つ１つのブログをdivで生成してgrid適用させる */}
+          {allPostsData.map(({ id, date, title, thumbnail }) => (
+            <article>
+              <img
+                src={`${thumbnail}`}
+                className={`${styles.thumbnailImage}`}
+              />
               <Link href={`/posts/${id}`}>{title}</Link>
               {/* {title} */}
               <br />
@@ -54,9 +62,25 @@ export default function Home({ allPostsData }) {
               <small className={utilStyles.lightText}>
                 <Date dateString={date} />
               </small>
+            </article>
+          ))}
+        </div>
+
+        {/* <ul className={utilStyles.list}>
+          {allPostsData.map(({ id, date, title }) => (
+            <li className={utilStyles.listItem} key={id}>
+              <Link href={`/posts/${id}`}>{title}</Link> */}
+        {/* {title} */}
+        {/* <br /> */}
+        {/* {id}
+              <br />
+              {date} */}
+        {/* <small className={utilStyles.lightText}>
+                <Date dateString={date} />
+              </small>
             </li>
           ))}
-        </ul>
+        </ul> */}
       </section>
     </Layout>
     // <div className={styles.container}>
