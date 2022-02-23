@@ -1,7 +1,7 @@
 ---
 title: "プリレンダリングの2つの形態"
 date: "2022-02-22"
-thumbnail: "/images/profile.png"
+thumbnail: "/images/thumbnail02.jpg"
 ---
 
 Next.js では、プリレンダリングには 2 つの形態があります。**静的生成**と**サーバーサイドレンダリング**です。違いは、ページの HTML をいつ生成するかという点です。

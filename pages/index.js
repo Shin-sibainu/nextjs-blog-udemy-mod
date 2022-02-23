@@ -36,7 +36,7 @@ export default function Home({ allPostsData }) {
       </Head>
       <section className={utilStyles.headingMd}>
         <p>
-          私はフルスタックエンジニアです。Udemy講師として活動しています。好きな言語はJavascriptです。
+          私はフルスタックエンジニアです/Udemy講師として活動しています/好きな言語はJavascriptです
         </p>
         {/* <Link href="/posts/first-post">最初の投稿はこちら</Link>  あとで外す*/}
       </section>
@@ -49,11 +49,15 @@ export default function Home({ allPostsData }) {
           {/* 1つ１つのブログをdivで生成してgrid適用させる */}
           {allPostsData.map(({ id, date, title, thumbnail }) => (
             <article>
-              <img
-                src={`${thumbnail}`}
-                className={`${styles.thumbnailImage}`}
-              />
-              <Link href={`/posts/${id}`}>{title}</Link>
+              <Link href={`/posts/${id}`}>
+                <img
+                  src={`${thumbnail}`}
+                  className={`${styles.thumbnailImage}`}
+                />
+              </Link>
+              <Link href={`/posts/${id}`}>
+                <a className={utilStyles.boldText}>{title}</a>
+              </Link>
               {/* {title} */}
               <br />
               {/* {id}
