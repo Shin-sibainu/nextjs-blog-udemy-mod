@@ -34,10 +34,3 @@
   margin: 0 auto;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
-
-@media (max-width: 600px) {
-  /* .grid {
-    width: 100%;
-    flex-direction: column;
-  } */
-}
