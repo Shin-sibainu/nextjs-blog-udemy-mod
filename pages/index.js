@@ -6,5 +6,11 @@ import Image from 'next/image';
 import Layout from '../components/layout';
 
 export default function Home() {
-  return <Layout>tasnieots</Layout>;
+  return (
+    <Layout>
+      <section>
+        <p className={utilStyles.headingMd}>プロフィールの文章です。</p>
+      </section>
+    </Layout>
+  );
 }
