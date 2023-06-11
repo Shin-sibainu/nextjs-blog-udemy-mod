@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
       <Head>
         <link rel="stylesheet" href="/favicon.ico" />
       </Head>
-      <header>
+      <header className={styles.header}>
         <img src="/images/profile.png" alt="" />
         <h1>{name}</h1>
       </header>
