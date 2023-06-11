@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import styles from './layout.module.css';
+import utilsStyles from '../styles/utils.module.css';
 
 const name = 'Masaru Suzuki';
 
@@ -10,10 +11,15 @@ const Layout = ({ children }) => {
     <div className={styles.container}>
       <Head>
         <link rel="stylesheet" href="/favicon.ico" />
+        96
       </Head>
       <header className={styles.header}>
-        <img src="/images/profile.png" alt="" />
-        <h1>{name}</h1>
+        <img
+          className={utilsStyles.borderCircle}
+          src="/images/profile.png"
+          alt=""
+        />
+        <h1 className="">{name}</h1>
       </header>
       <main>{children}</main>
     </div>
