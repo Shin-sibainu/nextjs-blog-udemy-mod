@@ -4,8 +4,17 @@ import styles from '../styles/Home.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 import Layout from '../components/layout';
+import { getPostsData } from '../lib/post';
 
-export default function Home() {
+export async function getStaticProps() {
+  const allPostsData = getPostsData();
+
+  return {
+    props: { allPostsData },
+  };
+}
+
+export default function Home({ allPostsData }) {
   return (
     <Layout>
       <section>
@@ -14,70 +23,24 @@ export default function Home() {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2>📝エンジニアのブログ</h2>
         <div className={styles.grid}>
-          <article>
-            <Link href="/">
-              <img
-                src="/images/thumbnail01.jpg"
-                className={styles.thumbnailImage}
-                alt=""
-              />
-            </Link>
-            <Link href="/">
-              <a className={utilStyles.boldText}>
-                SSGとSSRの使い分けの場面はいつなのか？
-              </a>
-            </Link>
-            <br />
-            <small className={utilStyles.lightText}>February 23,2023</small>
-          </article>
-          <article>
-            <Link href="/">
-              <img
-                src="/images/thumbnail01.jpg"
-                className={styles.thumbnailImage}
-                alt=""
-              />
-            </Link>
-            <Link href="/">
-              <a className={utilStyles.boldText}>
-                SSGとSSRの使い分けの場面はいつなのか？
-              </a>
-            </Link>
-            <br />
-            <small className={utilStyles.lightText}>February 23,2023</small>
-          </article>
-          <article>
-            <Link href="/">
-              <img
-                src="/images/thumbnail01.jpg"
-                className={styles.thumbnailImage}
-                alt=""
-              />
-            </Link>
-            <Link href="/">
-              <a className={utilStyles.boldText}>
-                SSGとSSRの使い分けの場面はいつなのか？
-              </a>
-            </Link>
-            <br />
-            <small className={utilStyles.lightText}>February 23,2023</small>
-          </article>
-          <article>
-            <Link href="/">
-              <img
-                src="/images/thumbnail01.jpg"
-                className={styles.thumbnailImage}
-                alt=""
-              />
-            </Link>
-            <Link href="/">
-              <a className={utilStyles.boldText}>
-                SSGとSSRの使い分けの場面はいつなのか？
-              </a>
-            </Link>
-            <br />
-            <small className={utilStyles.lightText}>February 23,2023</small>
-          </article>
+          {allPostsData.map(({ id, title, date, thumbnail }) => {
+            return (
+              <article key={id}>
+                <Link href={`/posts/${id}`}>
+                  <img
+                    src={thumbnail}
+                    className={styles.thumbnailImage}
+                    alt={title}
+                  />
+                </Link>
+                <Link href={`/posts/${id}`}>
+                  <a className={utilStyles.boldText}>{title}</a>
+                </Link>
+                <br />
+                <small className={utilStyles.lightText}>{date}</small>
+              </article>
+            );
+          })}
         </div>
       </section>
     </Layout>

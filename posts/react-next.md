@@ -1,7 +1,7 @@
 ---
-title: "ReactとNext.jsはどちらを使うべき？"
-date: "2020-02-24"
-thumbnail: "/images/thumbnail03.jpeg"
+title: 'ReactとNext.jsはどちらを使うべき？'
+date: '2020-02-24'
+thumbnail: '/images/thumbnail03.jpg'
 ---
 
 私たちは、可能な限り**Static Generation**（データあり・なし）の使用を推奨します。なぜなら、ページは一度構築され、CDN によって提供されるので、リクエストごとにサーバーがページをレンダリングするよりもはるかに高速になるためです。
