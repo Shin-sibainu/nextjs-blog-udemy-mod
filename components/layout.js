@@ -6,7 +6,7 @@ const name = 'Masaru Suzuki';
 
 export const siteTitle = 'Next.js Sample Website';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, home }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -15,7 +15,9 @@ const Layout = ({ children }) => {
       </Head>
       <header className={styles.header}>
         <img
-          className={utilsStyles.borderCircle}
+          className={`${utilsStyles.borderCircle} ${
+            home ? styles.headerHomeImage : styles.headerImage
+          }`}
           src="/images/profile.png"
           alt=""
         />
