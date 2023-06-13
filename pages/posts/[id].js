@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import Layout from '../../components/layout';
 import { getAllPostIds, getPostData } from '../../lib/post';
 import utilStyle from '../../styles/utils.module.css';
+import Head from 'next/head';
 
 const Post = ({ post }) => {
   // const router = useRouter();
@@ -12,6 +13,9 @@ const Post = ({ post }) => {
 
   return (
     <Layout>
+      <Head>
+        <title>{post.title}</title>
+      </Head>
       <article>
         <h1 className={utilStyle.title}>{post.title}</h1>
         <div className={utilStyle.lightText}>{post.date}</div>

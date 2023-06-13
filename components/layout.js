@@ -11,8 +11,8 @@ const Layout = ({ children, home }) => {
   return (
     <div className={styles.container}>
       <Head>
+        <title></title>
         <link rel="stylesheet" href="/favicon.ico" />
-        96
       </Head>
       <header className={styles.header}>
         <img
