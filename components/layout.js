@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import styles from './layout.module.css';
 import utilsStyles from '../styles/utils.module.css';
+import Link from 'next/link';
 
 const name = 'Masaru Suzuki';
 
@@ -24,6 +25,13 @@ const Layout = ({ children, home }) => {
         <h1 className="">{name}</h1>
       </header>
       <main>{children}</main>
+      {!home && (
+        <>
+          <Link href="/">
+            <a>← Back to home</a>
+          </Link>
+        </>
+      )}
     </div>
   );
 };
